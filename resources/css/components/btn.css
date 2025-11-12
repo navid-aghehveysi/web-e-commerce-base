@@ -1,0 +1,15 @@
+.btn {
+    @apply cursor-pointer px-4 py-2 rounded-lg  border;
+}
+.btn-success {
+    @apply bg-green-600 text-white;
+}
+.btn-danger {
+    @apply bg-red-50 border-red-400 text-red-600 ;
+}
+.btn-warning {
+    @apply bg-amber-50 border-amber-400 text-amber-600
+}
+.btn-info {
+    @apply bg-sky-50 border-sky-400 text-sky-700
+}

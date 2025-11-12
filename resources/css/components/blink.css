@@ -1,0 +1,12 @@
+@keyframes blink {
+    0% , 100% {
+        color: #f43f5e ;
+    }
+    50% {
+        color: #fda4af ;
+    }
+}
+
+.blink {
+    animation: blink 1s ease-in-out infinite;
+}

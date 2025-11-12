@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@import "./../components/fontiran.css";
+@import "./../components/scrollbar.css";
+@import "./../components/accordion.css";
+@import "./../components/btn.css";
+@import "./../components/badge.css";
+@import "./../components/avatar.css";
+@import "./../components/simple-form.css";
+@import "./../components/breadcrumb.css";
+@import "./../components/simple-table.css";
+@import "./../components/blink.css";
+@import "./../components/sweet-alert-toast.css";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+
+:root {
+    /*
+        font icon size
+    */
+    --fa-2xs: 0.625em;
+    --fa-xs: 0.75em;
+    --fa-sm: 0.875em;
+    --fa-lg: 1.25em;
+    --fa-xl: 1.5em;
+    --fa-2xl: 2em;
+
+    /*
+        Header
+    */
+    --header-height: 68px ;
+    --header-logo-width: 288px;
+    --aside-width: 288px;
+
+}
+
+@layer base {
+
+    html {
+        font-weight: 400;
+        font-family: IRANSansX , sans-serif;
+    }
+
+    .wrapper {
+        @apply px-24 pt-12 pb-4 h-full w-full
+    }
+}
+

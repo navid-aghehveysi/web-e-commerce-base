@@ -1,0 +1,34 @@
+@layer components {
+    .cart-table {
+        @apply p-2 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-sm ;
+        table {
+            @apply w-full text-right px-1 dark:border-sky-800 dark:text-white table-auto ;
+
+            tr {
+                @apply  border-b border-b-gray-300 dark:border-b-sky-800 text-right;
+            }
+            .more-menu-items {
+                @apply  absolute bg-white dark:bg-gray-500 p-4 min-w-52 border text-right top-8 left-0 rounded-lg shadow-lg
+
+            }
+            td,th {
+                /*last:w-76*/
+                @apply  px-2 first:px-0 py-3  last:text-center first:text-center  first:w-6
+            }
+            thead {
+                tr {
+                    @apply border-b-2 border-black
+                }
+            }
+            tbody{
+                tr {
+
+                    img {
+                        @apply w-14 h-10 rounded p-1;
+                    }
+                }
+            }
+
+        }
+    }
+}

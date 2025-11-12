@@ -1,0 +1,8 @@
+.sweet-alert-toast {
+    background-color: whitesmoke !important;
+    /*border: 1px solid red !important;*/
+    box-shadow: 4px 4px 10px -6px orangered !important;
+}
+.dark {
+    background-color: #e0e7ff !important;
+}

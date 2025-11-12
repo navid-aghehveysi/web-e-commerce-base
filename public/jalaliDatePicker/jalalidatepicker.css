@@ -1,0 +1,204 @@
+/* =============================
+   Overlay (پوشش پشت تقویم)
+============================= */
+jdp-overlay {
+    height: 0;
+    width: 0;
+}
+
+@media only screen and (max-width: 481px) {
+    jdp-overlay {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        background-color: rgba(0,0,0,0.3);
+        display: none;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* =============================
+   Container (کل پنجره تقویم)
+============================= */
+jdp-container {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.12), 0 1px 4px rgba(0,0,0,.24);
+    direction: rtl;
+    display: none;
+    max-width: 307.875px;  /* می‌توانی تغییر دهی */
+    min-width: 307.875px;  /* می‌توانی تغییر دهی */
+    overflow: hidden;
+    padding: .5rem 0;
+    position: absolute;
+    touch-action: manipulation;
+    user-select: none;
+
+    /* انیمیشن باز شدن */
+    -moz-animation: jdpOpenAnimation .3s cubic-bezier(.23,1,.32,1);
+    -webkit-animation: jdpOpenAnimation .3s cubic-bezier(.23,1,.32,1);
+    animation: jdpOpenAnimation .3s cubic-bezier(.23,1,.32,1);
+}
+
+@media only screen and (max-width: 481px) {
+    jdp-container {
+        border-radius: 4px 4px 0 0;
+        bottom: 0 !important;
+        left: 50% !important;
+        max-width: 100%;
+        min-width: 280px;
+        top: unset !important;
+        transform: translateX(-50%) !important;
+        width: 100%;
+        animation: jdpOpenAnimationMobile .3s cubic-bezier(.23,1,.32,1);
+    }
+}
+
+/* =============================
+   Header, Month, Year, Time
+============================= */
+jdp-container .jdp-header { /* اگر وجود داشت می‌توان اضافه کرد */ }
+
+jdp-container .jdp-month,
+jdp-container .jdp-year,
+jdp-container .jdp-time {
+    background: #fff;
+    border: none;
+    color: inherit;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 300;
+    height: auto;
+    line-height: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+jdp-container .jdp-month:hover,
+jdp-container .jdp-time:hover,
+jdp-container .jdp-year:hover {
+    filter: brightness(.9);
+}
+
+/* =============================
+   Days (روزها)
+============================= */
+jdp-container .jdp-days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: .5rem 0 0;
+    width: 100%;
+}
+
+jdp-container .jdp-day,
+jdp-container .jdp-day-name {
+    background: none;
+    border: 1px solid transparent;
+    color: rgba(0,0,0,.9);
+    display: inline-block;
+    flex-basis: 14.2857143%;
+    font-weight: 400;
+    height: 31px;
+    line-height: 31px;
+    margin: 2px 0;
+    position: relative;
+    text-align: center;
+    width: 14.2857143%;
+}
+
+jdp-container .jdp-day.selected,
+jdp-container .jdp-day-name.selected {
+    background-color: #569ff7 !important;
+    color: #fff !important;
+}
+
+jdp-container .jdp-day.holly-day,
+jdp-container .jdp-day-name.holly-day {
+    color: #f44336;
+}
+
+jdp-container .jdp-day.not-in-month {
+    opacity: .4;
+}
+
+jdp-container .jdp-day.disabled-day {
+    cursor: not-allowed;
+    opacity: .15;
+}
+
+jdp-container .jdp-day:not(.disabled-day) {
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .1s linear;
+}
+
+jdp-container .jdp-day:not(.disabled-day):hover {
+    background: rgba(0,0,0,.1);
+    transform: scale(1.15);
+    z-index: 1;
+}
+
+/* =============================
+   Footer (دکمه‌ها)
+============================= */
+jdp-container .jdp-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .5rem 0;
+    width: 100%;
+}
+
+jdp-container .jdp-btn-close,
+jdp-container .jdp-btn-empty,
+jdp-container .jdp-btn-today {
+    background: #569ff7;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 400;
+    padding: .3em .6em;
+    text-align: center;
+}
+
+/* =============================
+   Time container
+============================= */
+jdp-container .jdp-time-container {
+    display: flex;
+    padding: 0;
+}
+
+jdp-container .jdp-time-container .jdp-time {
+    flex: auto;
+    margin: 0 .5rem;
+    position: relative;
+}
+
+jdp-container .jdp-time-container .jdp-time select {
+    background: rgba(0,0,0,.03);
+    border-radius: 5px;
+    padding: .5rem 1rem .5rem 7px;
+}
+
+/* =============================
+   انیمیشن‌ها
+============================= */
+@keyframes jdpOpenAnimation {
+    0% { opacity: 0; transform: scale(.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes jdpOpenAnimationMobile {
+    0% { margin-bottom: -20%; opacity: 0; }
+    100% { margin-bottom: 0; opacity: 1; }
+}

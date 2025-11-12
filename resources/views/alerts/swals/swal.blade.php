@@ -1,0 +1,5 @@
+@include('alerts.swals.success')
+@include('alerts.swals.info')
+@include('alerts.swals.warning')
+@include('alerts.swals.error')
+@include('alerts.swals.delete-confirm' , ['className' => 'delete'])

@@ -1,0 +1,35 @@
+@layer components {
+    .simple-form {
+        @apply bg-white dark:bg-gray-700  shadow-lg rounded-lg px-2 py-4 text-base  ;
+        label {
+            @apply block mb-2 text-sm font-medium text-gray-900 dark:text-rose-200
+        }
+        input:not([type="checkbox"] , [type="radio"])  {
+            @apply outline-none block w-full p-2 bg-gray-50 dark:bg-gray-500 border border-gray-300 dark:border-sky-300
+                text-gray-900 dark:text-white text-base rounded-lg  dark:placeholder-gray-200
+        }
+        /*input[type="file"] {*/
+        /*    @apply border w-full p-2 rounded-lg*/
+        /*}*/
+        textarea {
+            @apply resize-none w-full  block border border-gray-300 dark:bg-gray-500 dark:border-sky-300
+                    rounded-lg shadow p-2 outline-none text-xl
+        }
+        select {
+            @apply block w-full p-1.5 bg-gray-50 dark:bg-gray-500 border border-gray-300 dark:border-sky-300
+                    text-gray-900 dark:text-white text-base rounded-lg outline-none
+        }
+
+        input[type="checkbox"] {
+
+            @apply align-middle w-3.5 h-3.5 dark:accent-pink-500
+        }
+        [role='alert'] {
+            @apply inline-block mt-2 text-rose-600
+        }
+    }
+}
+.input {
+    @apply outline-none block w-full p-2 bg-gray-50 dark:bg-gray-500 border border-gray-300 dark:border-sky-300
+    text-gray-900 dark:text-white text-base rounded-lg  dark:placeholder-gray-200
+}

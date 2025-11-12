@@ -1,0 +1,15 @@
+.bread-crumb {
+        @apply bg-white rounded-lg p-2;
+    .bread-crumb-path {
+        @apply text-red-500
+    }
+    .bread-crumb-target {
+        @apply text-gray-500
+    }
+    ol {
+        list-style-type: none;
+        li {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@layer components {
+    .badge {
+        @apply rounded-md px-1.5 p-1 text-xs font-medium absolute bg-rose-500 text-white
+    }
+}

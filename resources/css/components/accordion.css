@@ -1,0 +1,9 @@
+.accordion {
+    @apply overflow-hidden ;
+    .accordion-title {
+        @apply flex items-center justify-between cursor-pointer
+    }
+    .accordion-content {
+        @apply transition-all duration-200 space-y-0
+    }
+}
